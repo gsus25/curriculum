@@ -3,13 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Mi Currículum Vitae</title>
+  <meta name="author" content="Jesus Suarez">
+  <title>Jesus Suarez - Currículum Vitae</title>
   <link rel="stylesheet" href="styles.css">
+  
+  <!-- Agregar Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Agregar Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Tu Nombre</h1>
-    <p>Tu Cargo | Tu Email | Tu Teléfono</p>
+    <h1>Jesus Suarez - CV</h1>
+    <p>Estudiante de Computer Science | jedasuar@espol.edu.ec | Tu Teléfono</p>
   </header>
   <nav>
     <ul>
@@ -24,25 +38,38 @@
     <section id="resumen">
       <h2>Resumen</h2>
       <p>Breve descripción de tus habilidades y experiencia.</p>
+      <img src="https://placehold.co/500x400" alt="Imagen de ejemplo">
     </section>
     <section id="experiencia">
       <h2>Experiencia</h2>
     </section>
     <section id="educacion">
       <h2>Educación</h2>
+      <div id="map"></div>
+      <script>
+        var map = L.map('map').setView([-2.146640, -79.964870], 15); // Coordenadas de ESPOL
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var marker = L.marker([-2.146640, -79.964870]).addTo(map);
+        marker.bindPopup("<b>ESPOL</b><br>Guayaquil, Ecuador").openPopup();
+      </script>
     </section>
     <section id="habilidades">
       <h2>Habilidades</h2>
     </section>
     <section id="proyectos">
       <h2>Proyectos</h2>
+      <iframe width="600" height="400" src="https://www.youtube.com/watch?v=B8If3PmUHLI" 
+    frameborder="0" allowfullscreen></iframe>
     </section>
   </main>
   <footer>
     <p>© Tu Nombre - 2023</p>
     <ul>
       <li><a href="https://www.linkedin.com/in/tunombre">LinkedIn</a></li>
-      <li><a href="https://github.com/tunombre">GitHub</a></li>
+      <li><a href="https://github.com/gsus25">GitHub</a></li>
     </ul>
   </footer>
 </body>
