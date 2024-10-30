@@ -6,13 +6,6 @@
   <meta name="author" content="Jesus Suarez">
   <title>Jesus Suarez - Currículum Vitae</title>
   
-  <!-- Agregar Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
-  <!-- Agregar Leaflet JS -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-
   <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
 
   <style>
@@ -62,32 +55,39 @@
           <p><strong>Semestre:</strong> Actualmente cursando quinto semestre</p>
       </div>
       </div>
+      
       <div class="educacion-contenido">
-        <div id="map-container"> <!-- Mapa sticky -->
+        <div id="map-container"> 
           <div id="map"></div>
-          <script>
-            var map = L.map('map').setView([-2.146640, -79.964870], 15);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-              attribution: '© OpenStreetMap contributors'
-            }).addTo(map);
-            
-            var marker = L.marker([-2.146640, -79.964870]).addTo(map);
-            marker.bindPopup("<b>ESPOL</b><br>Guayaquil, Ecuador").openPopup();
-          </script>
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127584.51450030041!2d-80.04697183567608!3d-2.1475304351033766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d72f925e5bfdb%3A0x327cdb9f7f4ba3b2!2sEscuela%20Superior%20Politécnica%20del%20Litoral%20(ESPOL)!5e0!3m2!1ses-419!2sec!4v1716782474152!5m2!1ses-419!2sec" 
+            style="border:0;" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
         <div id="video-container">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/SIXQqe2uXxs?si=h2xiI8KM3qSc60nT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </section>
+    
     <section id="habilidades">
       <h2 class="subtitle">Habilidades</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit hendrerit urna ut rhoncus. Phasellus at arcu eget tellus vehicula aliquet sed sodales nisi. Praesent consequat massa vitae cursus eleifend. Duis lectus enim, varius vel sagittis id, finibus a ipsum. Proin ut libero sollicitudin, facilisis est quis, luctus nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut turpis arcu. Nullam pulvinar sed risus ac aliquet. Sed sit amet consectetur elit, at posuere quam. Morbi eget tellus sed quam egestas efficitur at id eros. Ut fermentum mi facilisis dignissim lobortis. In nisi nisl, fringilla sed mattis sit amet, efficitur eu mi.</p>
+      <p>Soy un programador junior con conocimientos en Java, Python, C y MySQL. Mis habilidades incluyen:</p>
+      <ul>
+        <li><strong>Programación:</strong> Dominio de la sintaxis y estructuras de control en varios lenguajes.</li>
+        <li><strong>Resolución de problemas:</strong> Capacidad para descomponer desafíos complejos y aplicar soluciones efectivas.</li>
+        <li><strong>Bases de datos:</strong> Experiencia en la creación y gestión de bases de datos con MySQL, incluyendo consultas SQL.</li>
+        <li><strong>Trabajo en equipo:</strong> Buenas habilidades de comunicación y colaboración en proyectos grupales.</li>
+        <li><strong>Control de versiones:</strong> Familiaridad con Git para gestionar versiones de código.</li>
+      </ul>
+      <p>Estoy comprometido con el aprendizaje continuo y dispuesto a enfrentar nuevos desafíos en el desarrollo de software.</p>
       <div class="habilidades-imagenes">
-        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730297927/java-logo-1_u0hlcv.png" alt="Proyecto 1"></div>
-        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730298132/C_Logo_bjvedg.png" alt="Proyecto 2"></div>
-        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730304833/python-logo-A32636CAA3-seeklogo.com_zmjylm.png" alt="Proyecto 3"></div>
-        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730304954/mysql_h9ktye.webp" alt="Proyecto 4"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730297927/java-logo-1_u0hlcv.png" alt="Java"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730298132/C_Logo_bjvedg.png" alt="C"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730304833/python-logo-A32636CAA3-seeklogo.com_zmjylm.png" alt="Python"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730304954/mysql_h9ktye.webp" alt="MySQL"></div>
       </div>
     </section>
 
@@ -98,9 +98,14 @@
       </div>
       <div class="proyecto-imagenes">
         <div class="sticky-card">
-          <div class="proyecto-imagen"><img src="https://placehold.co/600x400" alt="Proyecto 1"></div>
-          <div class="proyecto-imagen"><img src="https://placehold.co/600x400" alt="Proyecto 2"></div>
-          <div class="proyecto-imagen"><img src="https://placehold.co/600x400" alt="Proyecto 3"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326819/poo2_cokxsl.png" alt="Proyecto 1"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326818/estruct1_pbvpu2.png" alt="Proyecto 2"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326819/estruct2_nb9uvp.png" alt="Proyecto 3"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326818/poo1_qytyek.png" alt="Proyecto 4"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326818/assembly_asumzh.png" alt="Proyecto 5"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326819/bdd_ck19vx.png" alt="Proyecto 6"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326818/progsys1_euai2a.png" alt="Proyecto 7"></div>
+          <div class="proyecto-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730326818/progsys2_otbcw4.png" alt="Proyecto 8"></div>
         </div>
       </div>
     </section>

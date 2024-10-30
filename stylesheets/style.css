@@ -53,6 +53,8 @@
  
     padding-left: 1.2%; 
     padding-right: 1.2%; 
+
+    border-radius: 8px;
     
   }
   ul {
@@ -88,43 +90,35 @@ section form {
 
 }
 #resumen {
-
-  /* Modelo de diseño en cuadrícula */
-display: grid;
-grid-template-columns: 1fr 1fr;
-
-/* Distribuye el espacio entre y alrededor
-           de los items en el eje principal */
-  justify-content: center;
-
-  /* Alineación de un elemento dentro del bloque
-      que lo contiene, considerando el eje transversal */
-  align-items: stretch;
-  justify-items: center;
-
-  /* Plantilla con áreas en la cuadrícula */
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas de igual tamaño */
+  justify-content: center; /* Centra el contenido en la cuadrícula */
+  align-items: flex-start; /* Cambiado a flex-start para que se alineen en la parte superior */
+  justify-items: center; /* Centra los items dentro de sus celdas */
   grid-template-areas: "A D" 
                        "B D";
+  gap: 0rem; /* Espacio reducido entre filas y columnas */
 }
 
 .resumen-texto {
-grid-area: A;
-padding-left: 1.2rem; /* Sangría a la izquierda */
-padding-right: 1.2rem; /* Espacio a la derecha */
-text-align: left;
-max-width: 60%;
+  grid-area: A;
+  padding: 0.5rem 1.2rem; /* Reduce el padding superior e inferior */
+  text-align: left;
+  max-width: 60%;
 }
 
-.resumen-imagenes {
+.resumen-foto {
   grid-area: D;
   position: relative; /* Contexto de apilamiento */
-  padding-left: 1.2rem; /* Espacio a la izquierda */
-  padding-right: 1.2rem;
-  margin-left: auto; /* Esto centra la imagen hacia el medio */
-  margin-right: auto; /* Esto también ayuda a centrar */
-  max-width: 80%; /* Ajusta el ancho máximo para centrar mejor */
+  padding: 0.5rem 1.2rem; /* Reduce el padding superior e inferior */
+  max-width: 100%; /* Ancho máximo para centrar mejor */
   text-align: center;
 }
+#photo{
+  border-radius: 8px;
+  width: 40%;
+}
+
 
 
 /*mis cambios*/
@@ -295,52 +289,49 @@ header{
   }
 
   /* Estilos para las tarjetas de habilidades y educacion */
-#habilidades, #educacion {
-  background-color: #fffffe;
-}
-#habilidades h2, #educacion h2 {
-  color: #0f0e17;
-  text-align: center;
-}
-#habilidades p {
-  color: #2e2f3e;
-  text-align: center;
-}
-.habilidades-imagenes {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
-  gap: 1rem; /* Espacio entre las imágenes */
-}
-
-.habilidades-imagen img {
-  height: auto; /* Mantiene la relación de aspecto */
-  border-radius: 0; /* Para que las imágenes tengan bordes cuadrados */
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 300px); /* Cada imagen ocupará 300px de ancho */
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-}
-
-.habilidades-imagen {
-  width: 220px;
-  height: 220px;
-  background-color: #0f0e17; /* Color de fondo para cada contenedor */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px; /* Opcional: espacio interno alrededor de la imagen */
-  border-radius: 8px; /* Opcional: bordes redondeados en el contenedor */
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para cada contenedor */
-}
-
-.habilidades-imagen img {
-  width: 100%; /* La imagen ocupa todo el contenedor */
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px; /* Opcional: bordes redondeados en la imagen */
-}
+  #habilidades, #educacion {
+    background-color: #fffffe;
+    padding: 20px; /* Espacio alrededor de la sección */
+  }
+  
+  #habilidades h2, #educacion h2 {
+    color: #0f0e17;
+    text-align: left;
+    margin-bottom: 10px; /* Espacio debajo del título */
+  }
+  
+  #habilidades p, #habilidades ul{
+    color: #2e2f3e;
+    text-align: left;
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+  }
+  
+  .habilidades-imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+    gap: 1rem; /* Espacio entre las imágenes */
+    justify-items: center; /* Centra las imágenes en sus celdas */
+  }
+  
+  .habilidades-imagen {
+    width: 220px; /* Ancho del contenedor de imagen */
+    height: 220px; /* Alto del contenedor de imagen */
+    background-color: #0f0e17; /* Color de fondo para cada contenedor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Espacio interno alrededor de la imagen */
+    border-radius: 8px; /* Bordes redondeados en el contenedor */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para cada contenedor */
+  }
+  
+  .habilidades-imagen img {
+    width: 100%; /* La imagen ocupa todo el contenedor */
+    height: 100%; /* Mantiene la altura del contenedor */
+    object-fit: cover; /* Mantiene la relación de aspecto */
+    border-radius: 4px; /* Bordes redondeados en la imagen */
+  }
+  
 
 .educacion-secundaria, .educacion-superior {
   border: 1px solid #cedddd;  /* Borde de color gris claro */
@@ -352,11 +343,11 @@ header{
 }
  #educacion h3 {
   color: #fffffe;
-  text-align: center;
+  text-align: left;
 }
 #educacion p {
   color: #a7a9be;
-  text-align: center;
+  text-align: left;
 }
 .educacion-contenido {
   display: grid; /* Usa grid para el layout */
@@ -371,7 +362,7 @@ header{
 }
 
 #map-container, #video-container {
-  height: 250px; /* Fijar la altura para ambos elementos */
+  height: 350px; /* Fijar la altura para ambos elementos */
   width: 100%; /* Asegúrate de que ocupen el 100% del contenedor */
   display: flex; /* Para centrar el contenido dentro del contenedor */
   justify-content: center; /* Centrar horizontalmente */
