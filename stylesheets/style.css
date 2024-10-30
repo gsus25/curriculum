@@ -358,26 +358,33 @@ header{
   color: #a7a9be;
   text-align: center;
 }
-
 .educacion-contenido {
-  position: relative; /* Crea un contexto de apilamiento */
-  overflow-y: auto; /* Activa el scroll vertical para el contenido interno */
-  max-height: 50vh; /* Ajusta el alto máximo para mostrar solo el mapa al inicio */
-  padding: 16px;
-  border: 1px solid #cedddd;
-  border-radius: 8px;
-  background-color: #0f0e17;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: 16px;
+  display: grid; /* Usa grid para el layout */
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual tamaño */
+  gap: 1rem; /* Espacio entre las columnas */
+  padding: 16px; /* Padding general */
+  border: 1px solid #cedddd; /* Borde */
+  border-radius: 8px; /* Esquinas redondeadas */
+  background-color: #0f0e17; /* Color de fondo */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin-top: 16px; /* Margen superior */
+}
+
+#map-container, #video-container {
+  height: 250px; /* Fijar la altura para ambos elementos */
+  width: 100%; /* Asegúrate de que ocupen el 100% del contenedor */
+  display: flex; /* Para centrar el contenido dentro del contenedor */
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
 }
 
 #map {
-  width: 100%;
-  height: 300px;
+  width: 100%; /* Asegúrate de que el mapa ocupe el 100% del contenedor */
+  height: 100%; /* Asegúrate de que el mapa ocupe todo el contenedor */
 }
 
 iframe {
-  width: 100%;
-  height: 315px;
-  margin-top: 16px;
+  width: 100%; /* Asegúrate de que el iframe ocupe el 100% del contenedor */
+  height: 100%; /* Asegúrate de que el iframe ocupe todo el contenedor */
+  border: none; /* Eliminar borde del iframe */
 }
