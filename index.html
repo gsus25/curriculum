@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="author" content="Jesus Suarez">
   <title>Jesus Suarez - Currículum Vitae</title>
-  <link rel="stylesheet" href="/Users/davidsuarez/Desktop/curriculum/stylesheets/style.css">
+  
   <!-- Agregar Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
   <!-- Agregar Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  
+
+
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
   <style>
     #map {
       height: 500px;
@@ -20,81 +23,110 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Jesus Suarez - CV</h1>
-    <p>Estudiante de Computer Science | jedasuar@espol.edu.ec | Tu Teléfono</p>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#resumen">Resumen</a></li>
-      <li><a href="#experiencia">Experiencia</a></li>
-      <li><a href="#educacion">Educación</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#formulario">Contacto</a></li>
+  <nav class="navbar navbar-expand-lg bg-light text-uppercase fs-6 p-3 border-bottom align-items-center">
+    <ul class="navbar-nav d-flex flex-row">
+      <li class="nav-item"><a class="nav-link" href="#resumen">Resumen</a></li>
+      <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+      <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+      <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+      <li class="nav-item"><a class="nav-link" href="#formulario">Contacto</a></li>
     </ul>
   </nav>
-  <main>
+  <header>
+    <h1>Jesus Suarez - CV</h1>
+    <p>Estudiante de Computer Science | jedasuar@espol.edu.ec | 0999048899</p>
+  </header>
+  <main class="main">
     <section id="resumen">
-      <h2 class="subtitle">Resumen</h2>
-      <p>Breve descripción de tus habilidades y experiencia.</p>
-      <img id="photo" src="https://placehold.co/500x400" alt="Imagen de ejemplo">
-    </section>
-    <section id="experiencia">
-      <h2 class="subtitle">Experiencia</h2>
+      <div class="resumen-texto">
+        <h2 class="subtitle">Resumen</h2>
+        <p>Estudiante de Computer Science en ESPOL. Apasionado por la tecnología y la programación. Me encanta aprender cosas nuevas y enfrentar desafíos. Actualmente estoy buscando oportunidades para aplicar mis conocimientos y habilidades en un ambiente profesional.</p>  
+      </div>
+      <div class="resumen-foto">
+        <img id="photo" src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730305307/398_uora34.jpg" alt="Foto de perfil">
+      </div>
     </section>
     <section id="educacion">
       <h2 class="subtitle">Educación</h2>
-      <div id="map"></div>
-      <script>
-        var map = L.map('map').setView([-2.146640, -79.964870], 15); // Coordenadas de ESPOL
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
-
-        var marker = L.marker([-2.146640, -79.964870]).addTo(map);
-        marker.bindPopup("<b>ESPOL</b><br>Guayaquil, Ecuador").openPopup();
-      </script>
+      <div class="educacion-texto">
+        <div class="educacion-secundaria">
+          <h3>Educación Secundaria</h3>
+          <p><strong>Colegio:</strong> Colegio Interamericano</p>
+          <p><strong>Título Obtenido:</strong> Licenciatura en Ciencias</p>
+      </div>
+      <div class="educacion-superior">
+          <h3>Educación Superior</h3>
+          <p><strong>Universidad:</strong> Escuela Superior Politécnica del Litoral - ESPOL</p>
+          <p><strong>Facultad:</strong> Ingeniería en Electricidad y Computación</p>
+          <p><strong>Carrera:</strong> Ingeniería en Computación</p>
+          <p><strong>Semestre:</strong> Actualmente cursando quinto semestre</p>
+      </div>
+      </div>
+      <div class="educacion-contenido">
+        
+        <div id="video-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/SIXQqe2uXxs?si=h2xiI8KM3qSc60nT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div id="map-container"> <!-- Mapa sticky -->
+          <div id="map"></div>
+          <script>
+            var map = L.map('map').setView([-2.146640, -79.964870], 15);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+            map.invalidateSize();
+      
+            var marker = L.marker([-2.146640, -79.964870]).addTo(map);
+            marker.bindPopup("<b>ESPOL</b><br>Guayaquil, Ecuador").openPopup();
+          </script>
+        </div>
+      </div>
     </section>
     <section id="habilidades">
       <h2 class="subtitle">Habilidades</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit hendrerit urna ut rhoncus. Phasellus at arcu eget tellus vehicula aliquet sed sodales nisi. Praesent consequat massa vitae cursus eleifend. Duis lectus enim, varius vel sagittis id, finibus a ipsum. Proin ut libero sollicitudin, facilisis est quis, luctus nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut turpis arcu. Nullam pulvinar sed risus ac aliquet. Sed sit amet consectetur elit, at posuere quam. Morbi eget tellus sed quam egestas efficitur at id eros. Ut fermentum mi facilisis dignissim lobortis. In nisi nisl, fringilla sed mattis sit amet, efficitur eu mi.
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit hendrerit urna ut rhoncus. Phasellus at arcu eget tellus vehicula aliquet sed sodales nisi. Praesent consequat massa vitae cursus eleifend. Duis lectus enim, varius vel sagittis id, finibus a ipsum. Proin ut libero sollicitudin, facilisis est quis, luctus nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut turpis arcu. Nullam pulvinar sed risus ac aliquet. Sed sit amet consectetur elit, at posuere quam. Morbi eget tellus sed quam egestas efficitur at id eros. Ut fermentum mi facilisis dignissim lobortis. In nisi nisl, fringilla sed mattis sit amet, efficitur eu mi.</p>
+      <div class="habilidades-imagenes">
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730297927/java-logo-1_u0hlcv.png" alt="Proyecto 1"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730298132/C_Logo_bjvedg.png" alt="Proyecto 2"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730304833/python-logo-A32636CAA3-seeklogo.com_zmjylm.png" alt="Proyecto 3"></div>
+        <div class="habilidades-imagen"><img src="https://res.cloudinary.com/drdiuga8b/image/upload/v1730304954/mysql_h9ktye.webp" alt="Proyecto 4"></div>
+      </div>
+    </section>
 
-      </p>
-    </section>
     <section id="proyectos">
-      <h2 class="subtitle">Proyectos</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/B8If3PmUHLI?si=9llevPO8S66WteaC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div class="proyecto-texto">
+        <h2 class="subtitle">Proyectos</h2>
+        <p>Explora algunos de los proyectos en los que he trabajado. Cada uno está representado con una imagen y una breve descripción.</p>
+      </div>
+      <div class="proyecto-imagenes">
+        <div class="sticky-card">
+          <div class="proyecto-imagen"><img src="https://placehold.co/600x400" alt="Proyecto 1"></div>
+          <div class="proyecto-imagen"><img src="https://placehold.co/600x400" alt="Proyecto 2"></div>
+          <div class="proyecto-imagen"><img src="https://placehold.co/600x400" alt="Proyecto 3"></div>
+        </div>
+      </div>
     </section>
+
     <section id="formulario">
       <form>
-        <label for="nombre">Nombre Completo:</label>
-        <input type="text" id="nombre" name="nombre" required>
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="experiencia">Experiencia Laboral:</label>
-        <textarea id="experiencia" name="experiencia" rows="5"
-        required></textarea>
-        <label for="educacion">Educación:</label>
-        <textarea id="educacion" name="educacion" rows="5"
-        required></textarea>
-        <label>Habilidades Técnicas:</label><br>
-        <input type="checkbox" name="habilidades" value="HTML"> HTML
-        <input type="checkbox" name="habilidades" value="CSS"> CSS
-        <input type="checkbox" name="habilidades" value="JavaScript">
-        JavaScript
-        <label for="intereses">Intereses:</label>
-        <select id="intereses" name="intereses">
-        <option value="desarrollo">Desarrollo Web</option>
-        <option value="diseno">Diseño Gráfico</option>
-        <option value="marketing">Marketing Digital</option>
-        </select>
-        <button type="submit">Enviar</button>
-        </form>
+        <div>
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" name="nombre" required>
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="experiencia">Mensaje:</label>
+          <textarea id="experiencia" name="experiencia" rows="5" required></textarea>
+        </div>
+        <div>
+          <button type="submit">Enviar</button>
+        </div>
+      </form>
     </section>
   </main>
   <footer>
-    <p>© Tu Nombre - 2023</p>
+    <p>© Jesus Suarez - 2024</p>
     <ul>
       <li><a href="https://www.linkedin.com/in/tunombre">LinkedIn</a></li>
       <li><a href="https://github.com/gsus25">GitHub</a></li>
