@@ -206,57 +206,66 @@ header{
   background-color: #ff8906;
 }
 #proyectos {
-  /* Modelo de diseño en cuadrícula */
   display: grid;
-
-  /* Distribuye el espacio entre y alrededor de los items en el eje principal */
   justify-content: space-around;
-
-  /* Alineación de un elemento dentro del bloque que lo contiene */
   align-items: stretch;
-
-  /* Plantilla con áreas en la cuadrícula */
-  grid-template-areas: "A B"
-                       "C B";
+  grid-template-areas: "A B" "C B";
 }
 
 .proyecto-texto {
-  grid-area: A; /* Asigna el área al texto de proyectos */
-  padding-left: 1.2rem; /* Sangría a la izquierda */
-  padding-right: 1.2rem; /* Espacio a la derecha */
-  text-align: left; /* Alinear texto a la izquierda */
+  grid-area: A;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  text-align: left;
 }
 
 .proyecto-imagenes {
-  grid-area: B; /* Asigna el área a las imágenes */
-  position: relative; /* Contexto de apilamiento */
-  padding-left: 1.2rem; /* Espacio a la izquierda */
-  padding-right: 1.2rem; /* Espacio a la derecha */
+  grid-area: B;
+  position: relative;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
 }
 
 .sticky-card {
-  position: sticky; /* Mantiene la posición en la parte superior al hacer scroll */
-  top: 20px; /* Distancia desde la parte superior del viewport */
+  position: sticky;
+  top: 20px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  z-index: 10; /* Asegura que esté encima de otros elementos */
+  z-index: 10;
 }
+
+.proyecto-contenedor {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
 .proyecto-imagen img {
   width: 100%;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.proyecto-descripcion {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #333;
+
+}
+
 .proyecto-imagenes {
-  position: relative; /* Esto crea un contexto de apilamiento */
-  overflow-y: auto; /* Permite el scroll vertical en las imágenes */
-  max-height: 80vh; /* Establece un límite de altura */
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 #proyectos h2, #proyectos p {
-  width: 80%;
-  }
+  width: 100%;
+}
+
 
   main{
     display: grid;
