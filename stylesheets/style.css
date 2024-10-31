@@ -388,3 +388,13 @@ iframe {
   height: 100%; /* Asegúrate de que el iframe ocupe todo el contenedor */
   border: none; /* Eliminar borde del iframe */
 }
+
+input::placeholder {
+  color: #888; 
+  opacity: 1; 
+}
+
+textarea::placeholder {
+  color: #888; 
+  opacity: 1; 
+}
