@@ -325,13 +325,12 @@ header{
   .habilidades-imagen {
     width: 220px; /* Ancho del contenedor de imagen */
     height: 220px; /* Alto del contenedor de imagen */
-    background-color: #0f0e17; /* Color de fondo para cada contenedor */
+    background-color: fffffe; /* Color de fondo para cada contenedor */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 10px; /* Espacio interno alrededor de la imagen */
     border-radius: 8px; /* Bordes redondeados en el contenedor */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para cada contenedor */
   }
   
   .habilidades-imagen img {
